@@ -45,6 +45,7 @@ def create_user(request):
     db = get_db()
     user = request.data
     user = UserSerializer(data=user)
+    print(user)
     if user.is_valid():
         user = user.validated_data
         user['date_joined'] = datetime.now(timezone.utc)
